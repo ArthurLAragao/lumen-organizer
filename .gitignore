@@ -1,0 +1,41 @@
+# Local state and personally configured destinations
+.local/
+.venv/
+.venv-*/
+venv/
+venv-*/
+env/
+.tox/
+.nox/
+.env
+.env.*
+!.env.example
+settings.local.json
+*.local.json
+/settings.json
+/config.json
+/history.sqlite3
+/history.sqlite3-*
+# Generated/personal outputs remain on disk; they are not application source.
+/outputs/
+# User-authorized vault catalog: local context, not repository documentation.
+/docs/lumen-link-catalog.md
+# Python, test, and build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+test-results/
+build/
+dist/
+*.egg-info/
+# Temporary files (fictional Markdown fixtures remain tracked)
+*.tmp
+*.temp
+*.bak
+*~

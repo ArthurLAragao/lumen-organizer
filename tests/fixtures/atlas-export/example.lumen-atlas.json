@@ -1,0 +1,24 @@
+{
+  "format": "lumen-atlas-note",
+  "version": 1,
+  "integration_id": "lumen_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "title": "Fictional Atlas transfer",
+  "tags": [
+    "fictional",
+    "teste"
+  ],
+  "markdown": "---\nlumen_schema: 1\ntitle: \"Fictional Atlas transfer\"\ntype: research\ntopic: fictional-atlas-transfer\ntags: [\"fictional\", \"teste\"]\nsource: fictional-test\ncreated: \"2026-10-10\"\nstatus: reviewed\nlumen_export: true\natlas_action: none\natlas_task_id: \"\"\natlas_goal_id: \"\"\n---\n\n# Fictional Atlas transfer\n\n## Resumo\n\nTechnical fixture for a single-note transfer. No personal data or research claims.\n\n## Explicação\n\nThe source, YAML and Markdown are preserved; exporting is separate from importing.\n\n## Exemplos e aplicação\n\n```python\nprint(\"fictional example; never executed by Lumen\")\n```\n\n[[Fictional missing note]] remains text. No target is fetched or exported.\n\n## Revisão\n\nDid the fictional transfer preserve all content?\n\n## Fontes\n\nTechnical fixture; no external sources are claimed.\n\n## Registro pessoal\n\n- Personal understanding:\n- Questions:\n",
+  "origin": {
+    "atlas_action": "none",
+    "created": "2026-10-10",
+    "lumen_export": true,
+    "lumen_schema": 1,
+    "source": "fictional-test",
+    "status": "reviewed",
+    "topic": "fictional-atlas-transfer",
+    "type": "research"
+  },
+  "source_sha256": "f57f8ac5e245538b6701c364d4be0de714dc23b5e13849f6dca9ad495efb904c",
+  "comparison_sha256": "61ca7ac6faa0fe425595dcce7195881956a02320e96cd221a91025ea4b9d1f94",
+  "baseline_sha256": null
+}

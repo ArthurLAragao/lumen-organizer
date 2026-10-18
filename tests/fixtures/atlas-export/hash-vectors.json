@@ -1,0 +1,69 @@
+[
+  {
+    "name": "ascii",
+    "title": "Fictional",
+    "tags": [
+      "one",
+      "two"
+    ],
+    "markdown": "# Fictional\n",
+    "source_utf8_hex": "232046696374696f6e616c0a",
+    "source_sha256": "79f1693429d97bbc9943c91403120ddecca91eabe1fa51415b93970c8582254f",
+    "markdown_utf16_units": 12,
+    "comparison_preimage_hex": "4c554d454e2d41544c41532d434f4d5041524500010000000946696374696f6e616c00000002000000036f6e650000000374776f0000000c232046696374696f6e616c0a",
+    "comparison_sha256": "2ff537afe9da0cc018f2db260cf5518224b2a148e2646863535247378b5b9632"
+  },
+  {
+    "name": "bom-crlf",
+    "title": "Fixture",
+    "tags": [],
+    "markdown": "﻿---\r\ntitle: Fixture\r\n---\r\n# Fixture\r\n",
+    "source_utf8_hex": "efbbbf2d2d2d0d0a7469746c653a20466978747572650d0a2d2d2d0d0a2320466978747572650d0a",
+    "source_sha256": "94b92198f8707c8be5c7b6a14b121bec564738d0112e919cebf9600476655e0d",
+    "markdown_utf16_units": 38,
+    "comparison_preimage_hex": "4c554d454e2d41544c41532d434f4d50415245000100000007466978747572650000000000000028efbbbf2d2d2d0d0a7469746c653a20466978747572650d0a2d2d2d0d0a2320466978747572650d0a",
+    "comparison_sha256": "9699a2972d5e01d49a614816d8b5f0dc218dbcf74b95028739ccb16407898059"
+  },
+  {
+    "name": "unicode",
+    "title": "Á / Á / 😀",
+    "tags": [
+      "😀",
+      "á"
+    ],
+    "markdown": "# Unicode\nÁ\n😀\n",
+    "source_utf8_hex": "2320556e69636f64650a41cc810af09f98800a",
+    "source_sha256": "57fd0393e127aa325f280bd236f9ef16cf433a15fe4fa42ece26e13e63a6219e",
+    "markdown_utf16_units": 16,
+    "comparison_preimage_hex": "4c554d454e2d41544c41532d434f4d5041524500010000000fc381202f2041cc81202f20f09f98800000000200000004f09f988000000002c3a1000000132320556e69636f64650a41cc810af09f98800a",
+    "comparison_sha256": "6006716f384e9c56b845a454d89e48e950aad0613c2c83458f0ecd7531cb15c7"
+  },
+  {
+    "name": "escaping",
+    "title": "Quotes \" and \\",
+    "tags": [
+      "a",
+      "b"
+    ],
+    "markdown": "```text\n[[path|alias]]\n\\ \" \t\n```",
+    "source_utf8_hex": "606060746578740a5b5b706174687c616c6961735d5d0a5c202220090a606060",
+    "source_sha256": "052a225974d1f6221c2f9ae0f1ad63939e661def9c3a0e86cb37ab81d3af2be9",
+    "markdown_utf16_units": 32,
+    "comparison_preimage_hex": "4c554d454e2d41544c41532d434f4d5041524500010000000e51756f746573202220616e64205c000000020000000161000000016200000020606060746578740a5b5b706174687c616c6961735d5d0a5c202220090a606060",
+    "comparison_sha256": "4d4c82c7bfdefd69bff7d3ec8efb99a73603b1b12631c9848c31d8b6a3dd952d"
+  },
+  {
+    "name": "tag-order",
+    "title": "Fictional",
+    "tags": [
+      "two",
+      "one"
+    ],
+    "markdown": "# Fictional\n",
+    "source_utf8_hex": "232046696374696f6e616c0a",
+    "source_sha256": "79f1693429d97bbc9943c91403120ddecca91eabe1fa51415b93970c8582254f",
+    "markdown_utf16_units": 12,
+    "comparison_preimage_hex": "4c554d454e2d41544c41532d434f4d5041524500010000000946696374696f6e616c000000020000000374776f000000036f6e650000000c232046696374696f6e616c0a",
+    "comparison_sha256": "62a429914be4291d54a2d43d196115973fc2f40b29680cffe8e74affd343e0a7"
+  }
+]

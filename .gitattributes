@@ -1,0 +1,4 @@
+# Exact source/package fixtures must survive Windows checkout byte for byte.
+tests/fixtures/atlas-export/reviewed.md -text
+tests/fixtures/atlas-export/example.lumen-atlas.json -text
+tests/fixtures/atlas-export/hash-vectors.json text eol=lf
