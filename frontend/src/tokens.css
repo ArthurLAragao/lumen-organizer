@@ -1,0 +1,100 @@
+:root {
+  color-scheme: dark;
+  --canvas: #12151b;
+  --sidebar: #0e1117;
+  --surface: #191e27;
+  --raised: #202733;
+  --glass: rgb(25 30 39 / 0.88);
+  --text: #eaf2ff;
+  --muted: #a1aec3;
+  --faint: #8997ad;
+  --line: #323c4b;
+  --hairline: rgb(136 171 216 / 0.16);
+  --control: #687a93;
+  --accent: #60a5fa;
+  --accent-ink: #09172a;
+  --accent-soft: rgb(96 165 250 / 0.1);
+  --focus: #93c5fd;
+  --danger: #fda4af;
+  --success: #a1aec3;
+  --shadow: 0 12px 36px rgb(0 0 0 / 0.12);
+  --modal-shadow: 0 24px 80px rgb(0 0 0 / 0.35);
+  --overlay: rgb(5 8 14 / 0.72);
+  --s0: 0;
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.25rem;
+  --s6: 1.5rem;
+  --s7: 1.75rem;
+  --s8: 2rem;
+  --s10: 2.5rem;
+  --s12: 3rem;
+  --s16: 4rem;
+  --r-sm: 0.5rem;
+  --r-md: 0.8rem;
+  --r-lg: 1.1rem;
+  --r-xl: 1.5rem;
+  --r-pill: 100rem;
+  --font: "Segoe UI Variable", "Segoe UI", Inter, system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.75rem;
+  --text-label: 0.8125rem;
+  --text-body: 0.875rem;
+  --text-base: 1rem;
+  --text-subtitle: 1.125rem;
+  --text-title: 1.5rem;
+  --text-display: clamp(1.8rem, 2.5vw, 2.65rem);
+  --leading: 1.65;
+  --heading-leading: 1.22;
+  --weight: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 650;
+  --tracking: -0.04em;
+  --sidebar-width: 13.8rem;
+  --workspace-width: 88rem;
+  --topbar-height: 4.75rem;
+  --control-height: 2.75rem;
+  --padding-card: var(--s7);
+  --border: 1px;
+  --blur: 18px;
+  --focus-width: 2px;
+  --duration: 180ms;
+  --duration-slow: 350ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #f2f5f9;
+  --sidebar: #e9eef5;
+  --surface: #fafcff;
+  --raised: #e7edf5;
+  --glass: rgb(250 252 255 / 0.92);
+  --text: #172337;
+  --muted: #4e607a;
+  --faint: #566882;
+  --line: #b4c1d2;
+  --hairline: rgb(54 80 118 / 0.2);
+  --control: #798ca8;
+  --accent: #205dbb;
+  --accent-ink: #f1f7ff;
+  --accent-soft: rgb(32 93 187 / 0.08);
+  --focus: #205dbb;
+  --danger: #ab2340;
+  --overlay: rgb(24 35 52 / 0.48);
+}
+:root[data-accent="ice"]:not([data-theme="light"]) {
+  --accent: #93c5fd;
+  --accent-soft: rgb(147 197 253 / 0.1);
+}
+:root[data-accent="ice"][data-theme="light"] {
+  --accent: #275a91;
+  --accent-soft: rgb(39 90 145 / 0.1);
+}
+:root[data-density="compact"] {
+  --padding-card: var(--s5);
+  --control-height: 2.5rem;
+}

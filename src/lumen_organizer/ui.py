@@ -95,11 +95,13 @@ class ScrollableForm(ttk.Frame):
 
 
 class App:
-    def __init__(self, root: tk.Tk, local_directory: Path, *, load_settings=True):
+    def __init__(self, root: tk.Tk, local_directory: Path, *, load_settings=True, content_parent=None):
         self.root = root
+        self.content_parent = content_parent
         self.controller = Controller(local_directory)
         self.export_local = Path(local_directory)
         self.export_window = None
+        self.capture_window = None
         self.worker = Worker()
         self.closed = self.closing = self._rendering = False
         self._poll_id = None
@@ -127,7 +129,7 @@ class App:
             self.dispatch(self.controller.start_load_settings())
 
     def _build(self):
-        root, theme = self.root, self.theme
+        root, theme = self.content_parent if self.content_parent is not None else self.root, self.theme
         root.columnconfigure(0, weight=1)
         root.rowconfigure(2, weight=1)
 
@@ -142,6 +144,7 @@ class App:
         self.vault_button.grid(row=0, column=2, padx=(theme.px(12), 0))
         self.export_button = ttk.Button(self.header, text="Exportar para Atlas", command=self.open_export)
         self.export_button.grid(row=0, column=3, padx=(theme.px(12), 0))
+        ttk.Button(self.header, text="Capturar vídeo", command=self.open_capture).grid(row=0, column=4, padx=(theme.px(12), 0))
         ttk.Separator(root).grid(row=1, sticky="ew")
 
         self.body = ttk.Frame(root, padding=theme.pad(24, 16))
@@ -291,6 +294,16 @@ class App:
         self.footer.bind("<Configure>", lambda event: self.lifecycle_label.configure(wraplength=max(theme.px(400), event.width - theme.px(48))))
         root.bind("<Control-o>", lambda event: self.choose_file() if not self.controller.active else None)
         root.bind("<Escape>", lambda event: self.act(self.controller.cancel_step) if self.dialog is None else None)
+
+    def open_capture(self):
+        if self.capture_window is not None:
+            if getattr(self.capture_window, 'embedded', False):
+                self.workspace_notebook.select(self.capture_window.window)
+                return
+            self.capture_window.window.lift()
+            return
+        from .capture_ui import CaptureWindow
+        self.capture_window = CaptureWindow(self)
 
     def open_export(self):
         if self.export_window is not None:
@@ -498,6 +511,9 @@ class App:
         self.import_button.configure(state="disabled")
 
     def close_requested(self):
+        if self.capture_window is not None and not self.capture_window.close():
+            self.capture_window.window.lift()
+            return
         if self.export_window is not None:
             if self.export_window.workflow.active is not None:
                 self.export_window.window.lift()
@@ -710,7 +726,6 @@ class FolderDialog:
         self.app.dialog = None
 
 
-def launch(local_directory: Path):
-    root = tk.Tk()
-    App(root, local_directory)
-    root.mainloop()
+def launch(local_directory: Path, *, capture=False):
+    from .workspace_ui import launch_workspace
+    launch_workspace(local_directory)

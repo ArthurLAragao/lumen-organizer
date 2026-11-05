@@ -4,9 +4,9 @@ from types import MappingProxyType
 from tkinter import font, ttk
 
 COLORS = MappingProxyType({
-    "background": "#101010", "surface": "#191919", "selected": "#242424",
-    "text": "#F5F5F2", "muted": "#A6A6A0", "divider": "#3B3B3B",
-    "border": "#707070", "accent": "#A3C4FF", "accent_hover": "#B6D0FF",
+    "background": "#12151B", "surface": "#191E27", "selected": "#202733",
+    "text": "#EAF2FF", "muted": "#A1AEC3", "divider": "#323C4B",
+    "border": "#687A93", "accent": "#60A5FA", "accent_hover": "#93C5FD",
     "warning": "#E6BC73", "error": "#FF9A8E", "success": "#9BD1AD",
 })
 SPACING = (4, 8, 12, 16, 24, 32)

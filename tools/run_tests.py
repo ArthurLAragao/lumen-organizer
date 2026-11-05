@@ -6,6 +6,11 @@ import sys
 import tempfile
 import unittest
 
+# The write-boundary audit also observes lazy codec imports. Python must not try
+# creating standard-library bytecode outside a fictional test's directory.
+sys.dont_write_bytecode = True
+os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 # Some Windows environments configure TEMP outside the writable workspace.

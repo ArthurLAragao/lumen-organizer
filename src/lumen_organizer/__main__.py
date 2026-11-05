@@ -14,12 +14,13 @@ def main() -> int:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check-environment")
     commands.add_parser("gui", help="Abrir a interface desktop em português")
+    commands.add_parser("workspace", help="Abrir o Lumen com captura de vídeos e conexão local ao Atlas")
     validator = commands.add_parser("validate")
     validator.add_argument("markdown_file")
     args = parser.parse_args()
-    if args.command == "gui":
+    if args.command in ("gui", "workspace"):
         from .ui import launch
-        launch(Path(__file__).resolve().parents[2] / ".local")
+        launch(Path(__file__).resolve().parents[2] / ".local", capture=args.command == "workspace")
         return 0
     if args.command == "check-environment":
         import tkinter
