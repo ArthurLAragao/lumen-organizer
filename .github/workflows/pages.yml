@@ -24,8 +24,8 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: npm --prefix frontend ci
       - run: npm --prefix frontend run build
-      - run: python tools/configure_ci_display.py
-      - run: python tools/run_tests.py
+      - name: Core tests (interactive Tk cases are explicitly reported as skipped)
+        run: python tools/run_tests.py --headless
   build:
     needs: verify-source
     runs-on: ubuntu-latest

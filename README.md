@@ -107,6 +107,10 @@ npm --prefix frontend run build
 python scripts/check_site.py
 ```
 
+Hosted CI runs `tools/run_tests.py --headless`: interactive Tk cases are reported
+as skipped because GitHub's Windows display is fixed and non-interactive. Use the
+default command above for the complete local desktop suite.
+
 The automated suite uses fictional notes and isolated destinations. It does not
 prove that a different person's Codex/Notion account or physical device is configured.
 

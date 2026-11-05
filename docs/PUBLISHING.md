@@ -2,8 +2,15 @@
 
 The `master` branch contains the portable application source and a public project
 showcase in `site/`. GitHub Pages serves that showcase, not the Python runtime.
-The Pages workflow verifies the React build and fictional Python regression suite
-on Windows, checks the site's local asset links, then deploys only `site/`.
+The Pages workflow verifies the React build and non-interactive fictional Python
+regressions on Windows, checks local asset links, then deploys only `site/`.
+GitHub's Windows runner has a fixed 1024x768 non-interactive desktop; the attempt
+to configure a larger display was rejected by its driver. `--headless` explicitly
+reports interactive Tk cases as skipped. The default runner still runs every
+desktop test. The complete 187-test local run passed with no skips; hosted CI does
+not claim that same desktop coverage.
+The explicit hosted mode executes **163 non-interactive tests** and reports
+**24 interactive desktop tests skipped** out of 187 discovered cases.
 
 ## Verified for this publication
 
