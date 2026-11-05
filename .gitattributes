@@ -2,3 +2,5 @@
 tests/fixtures/atlas-export/reviewed.md -text
 tests/fixtures/atlas-export/example.lumen-atlas.json -text
 tests/fixtures/atlas-export/hash-vectors.json text eol=lf
+# Validation tests intentionally inspect LF-delimited research frontmatter bytes.
+tests/fixtures/research-*.md text eol=lf
